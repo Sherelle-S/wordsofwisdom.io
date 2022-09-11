@@ -11,7 +11,16 @@
     <title>Wishing Wisdom</title>
 </head>
 <body>
-    
+    <section class="containingBody">
+    <nav>
+        <ul class="colours">
+            <li id="mosaicBckgrnd" class="tabs one">Mood 1</li>
+            <li id="movingBckgrnd" class="tabs two">Mood 2</li>
+            <li id="tropiclBckgrnd" class="tabs three">Mood 3</li>
+        </ul>
+    </nav>
+
+    <!-- <iframe src='https://gfycat.com/ifr/WatchfulFantasticGazelle' frameborder='0' scrolling='no' allowfullscreen width='640' height='404'></iframe> -->
    <div class="quoteContainer" id="quoteContainer">
        <!-- Quote -->
        <div class="quoteText">
@@ -27,9 +36,19 @@
        <button class="twitterButton" id="twitter" title="Tweet This!">
        <i class="fab fa-twitter"></i>
     </button>
+    <button class="favoriteButton" id="favorite" title="Favorite" onclick="clicked()">
+        <i class="fa-solid fa-heart"></i>
+    </button>    
     <button id="newQuote">New Quote</button>
    </div>
 </div>
+ 
+<!-- <div class="theme-switch-wrapper">
+      <span id="music-player">
+        <i id="playBtn" class="fa-solid fa-circle-play"></i>
+        <i id="pauseBtn" class="fa-regular fa-circle-pause"></i>
+   </span>
+</div> -->
 <!-- Loader -->
 
  <div class="loader" id="loader" style="--b: 5px;--c: black;width: 80px;--n: 6;--g: 20deg"></div>
@@ -37,3 +56,6 @@
 <script src="script.js"></script>
 </body>
 </html>
+
+
+

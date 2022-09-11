@@ -3,15 +3,39 @@ const quoteText = document.getElementById('quote');
 const authorText = document.getElementById('author');
 const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('newQuote');
-const loader = document.getElementById('loader')
+const favoriteButton = document.getElementById('favorite');
+const loader = document.getElementById('loader');
+const mosaic = document.getElementById('mosaicBckgrnd');
+const moving = document.getElementById('movingBckgrnd');
+const tropical = document.getElementById('tropiclBckgrnd');
+const playBtn = document.getElementById('playBtn');
+const pauseBtn = document.getElementsByName('pauseBtn');
+const mosaicURL = 'url("https://res.cloudinary.com/dft0cktie/image/upload/v1662586131/trianglify-lowres_nmjdty.png")';
+const movingURL = 'url("https://res.cloudinary.com/dft0cktie/image/upload/v1657749865/8hnB_p0xza1.gif")';
+const tropicalURL = 'url("https://res.cloudinary.com/dft0cktie/image/upload/v1656719684/pexels-pixabay-219998_lddnpz.jpg")';
+      
 
-let apiQuotes = [];
+ let apiQuotes = [];
 
 // show loading
 function loading(){
     loader.hidden = false;
     quoteContainer.hidden = true;
 }
+
+// background changer
+ mosaicBckgrnd.addEventListener('click', () =>{
+     document.body.style.backgroundImage = `${mosaicURL}`;
+ });
+    
+ movingBckgrnd.addEventListener('click', () =>{
+    document.body.style.backgroundImage = `${movingURL}`;
+});
+
+tropiclBckgrnd.addEventListener('click', () =>{
+    document.body.style.backgroundImage = `${tropicalURL}`;
+});
+
 
 // Hide loading
 function complete(){
@@ -38,9 +62,9 @@ if(!quote.author){
 // set quote, hide loader
 quoteText.textContent = quote.text;
 complete();
-}
-// Get Quotes from API
+} 
 
+// Get Quotes from API
 async function getQuotes(){
     loading();
     const apiUrl = 'https://type.fit/api/quotes';
@@ -59,10 +83,95 @@ function tweetQuote(){
     window.open(twitterUrl, '_blank');
 }
 
+// Favorite Button
+// function favorited(){
+//     event.body.style.color = ; 
+// }
+
 // Event Listener
 
 newQuoteBtn.addEventListener('click', newQuote);
-    twitterBtn.addEventListener('click', tweetQuote);
+twitterBtn.addEventListener('click', tweetQuote);
+// favoriteButton.addEventListener('click', favorited);
 
 // On Load
 getQuotes();
+
+
+// favorite button
+
+favoriteButton.addEventListener('click', function onClick(favorited){
+    favorited.target.style.color = '#fb116b';
+    // if(getQuotes ? favoriteButton.reload());
+});
+
+
+
+// play or pause event listerner
+playBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));
+
+// Update DOM
+function loadSong(song){
+    title.textContent = song.displayName;
+    artist.textContent = song.artist;
+    music.src = `${songURLS.name}.mp3`;
+    image.src = `img/${song.name}.jpg`
+}
+
+// current Song
+let songIndex = 0;
+
+// // Next Song
+// function prevSong(){
+//     songIndex--;
+//     if(songIndex < 0){
+//         songIndex = songs.length -1;
+//     }
+//     console.log(songIndex);
+//     loadSong(song[songIndex]);
+//     playSong();
+// }
+
+// // Next Song
+// function nextSong(){
+//     songIndex++;
+//     if(songIndex > songs.length - 1){
+//         songIndex = 0;
+//     }
+//     console.log(songIndex);
+//     loadSong(song[songIndex]);
+//     playSong();
+// }
+
+    // On Load - Select First Song
+    loadSong(song[songIndex]);
+
+
+    playBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));    
+
+
+
+// Event Listeners
+playBtn.addEventListener('click', palySong);
+pauseBtn.addEventListener('click', pauseSong);
+
+
+
+
+
+      
+// play Active
+      const playToggle = document.getElementById('music-player');
+  
+function playActivated(){
+   playToggle.children[0].classList.replace("fa-solid", "fa-regular");
+   playToggle.children[1].classList.replace("fa-regular", "fa-solid");
+}
+playToggle.addEventListener('click', playActivated);
+
+
+// pause Active
+function pauseActivated(){
+    
+}
+pauseToggle.addEventListener('click', pauseActivated);
