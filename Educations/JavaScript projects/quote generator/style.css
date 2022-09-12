@@ -5,6 +5,7 @@ html{
 }
 body{
     align-items: center;
+    cursor:alias;
     display: flex;
     font-family: 'Arima', cursive; 
     justify-content: center; 
@@ -21,6 +22,9 @@ body{
 /* background nav */
     .one{
         background-color: rgb(146, 146, 146);
+    }
+    .one:hover, .two:hover, .three:hover{
+        cursor: pointer
     }
     .two{
         background-color: rgb(78, 78, 78);
