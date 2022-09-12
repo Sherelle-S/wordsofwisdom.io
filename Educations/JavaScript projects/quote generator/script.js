@@ -100,10 +100,19 @@ getQuotes();
 
 // favorite button
 
-favoriteButton.addEventListener('click', function onClick(favorited){
+
+function favoriteSelected(favorited){
     favorited.target.style.color = '#fb116b';
-    // if(getQuotes ? favoriteButton.reload());
-});
+    // if(getQuotes ? remove.('#fb116b');
+};
+// Event Listener
+favoriteButton.addEventListener('click', favoriteSelected)
+
+// favorite button refresh
+// newQuoteBtn.addEventListener('click', refreshFavorite)
+// function refreshFavorite(favorited){
+//     favorited.target.style.color = '#c0c0c0';
+// };
 
 
 
