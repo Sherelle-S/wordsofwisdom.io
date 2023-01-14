@@ -11,7 +11,7 @@ const tropical = document.getElementById('tropiclBckgrnd');
 const playBtn = document.getElementById('playBtn');
 const pauseBtn = document.getElementsByName('pauseBtn');
 const mosaicURL = 'url("https://res.cloudinary.com/dft0cktie/image/upload/v1662586131/trianglify-lowres_nmjdty.png")';
-const movingURL = 'url("https://res.cloudinary.com/dft0cktie/image/upload/v1657749865/8hnB_p0xza1.gif")';
+const movingURL = 'url("https://res.cloudinary.com/dft0cktie/video/upload/v1667258297/Fountain_-_123660_1_ulzwno.mp4")';
 const tropicalURL = 'url("https://res.cloudinary.com/dft0cktie/image/upload/v1656719684/pexels-pixabay-219998_lddnpz.jpg")';
       
 
@@ -29,7 +29,7 @@ function loading(){
  });
     
  movingBckgrnd.addEventListener('click', () =>{
-    document.body.style.backgroundImage = `${movingURL}`;
+    document.body.style.backgroundClip = `${movingURL}`;
 });
 
 tropiclBckgrnd.addEventListener('click', () =>{
